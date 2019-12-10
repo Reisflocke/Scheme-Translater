@@ -1,10 +1,12 @@
-;#lang scheme
-;(require scheme/gui)
+#lang scheme
+(require scheme/gui)
 
+; module:
+(provide error-message)
 
 ; ---------- ERROR ----------
 
-(define (error text)
+(define (error-message text)
   (send error_msg set-label text)
   (send error_dialog show #t)
  )

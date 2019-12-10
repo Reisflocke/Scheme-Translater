@@ -1,38 +1,11 @@
 #lang scheme
 (require scheme/gui)
-; eval other files
-(eval "Error.rkt")
+; link required modules
+(require "modules/core/error-manager.rkt") ; error Message Window
+(require "modules/extended/extended-math.rkt")
+; load required dictonary (dict)
+(require "Dictonary.rkt")
 
-
-(define dict
-'(
-		(Hello Hallo)
-                (Good_Day Servus)
-                (Fun Gaudi)
-                (Bratwurst Bratwurst)
-                (Be_blessed Grüßdi)
-                (Porkchop Schnitzel)
-                (Krauts Deutsche)
-                (Happy_Hour Freibier)
-))
-
-; ---------- Mathe ----------
-
-(define (fact n)
-  (if (= n 0)
-      1
-      (* n (fact (- n 1)))
-      )
-  )
-
-(define (binco n k)
-  (if (> n k) ; the procedure doesn't works if n < k
-      (/ (fact n)
-         (* (fact k) (fact (- n k))))
-      (error "K is greater then n. \n You need to amke sure that the first number is greater then the second.")
-   )
-
-  )
 
 
 (define (translate input-text)

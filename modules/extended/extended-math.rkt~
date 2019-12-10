@@ -1,0 +1,20 @@
+#lang scheme
+
+
+; ---------- Mathe ----------
+
+(define (fact n)
+  (if (= n 0)
+      1
+      (* n (fact (- n 1)))
+      )
+  )
+
+(define (binco n k)
+  (if (> n k) ; the procedure doesn't works if n < k
+      (/ (fact n)
+         (* (fact k) (fact (- n k))))
+      (error-message "K is greater then n. \n You need to amke sure that the first number is greater then the second.")
+   )
+
+  )
