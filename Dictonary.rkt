@@ -4,7 +4,7 @@
 (provide dict)
 ; function
 (provide search)
-
+(provide translate-word)
 
 ; ----- LIST -----
 
@@ -19,14 +19,14 @@
 
 (define dict
 '(
-		("Hello" "Hallo")
-                ("Good_Day" "Servus")
-                ("Fun" "Gaudi")
-                ("Bratwurst" "Bratwurst")
-                ("Be_blessed" "Grüßdi")
-                ("Porkchop" "Schnitzel")
-                ("Krauts" "Deutsche")
-                ("Happy_Hour" "Freibier")
+		("Hallo" "Hello")
+                ("Servus" "Good Day")
+                ("Gaudi" "Fun")
+                ("Bratwurst" "Sausage")
+                ("Grüßdi" "Be blessed")
+                ("Schnitzel" "Porkchop")
+                ("Deutsche" "Krauts")
+                ("Freibier" "Happy Hour")
 ))
 
 
@@ -37,6 +37,14 @@
   (filter (lambda (i) (member s-word i)) dictonary)
   )
 
+
 (define (translate-word s-word dictonary lang)
+  (if (null? (search s-word dictonary))
+      "..."
+  (get-word s-word dictonary lang)
+  ))
+
+
+(define (get-word s-word dictonary lang)
   (list-ref (car (search s-word dictonary) ) lang) ; first get the (list) out of ((list)) and then return the word in the language to translate to
-  )
+ )
