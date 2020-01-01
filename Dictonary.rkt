@@ -36,3 +36,7 @@
 (define (search s-word dictonary)
   (filter (lambda (i) (member s-word i)) dictonary)
   )
+
+(define (translate-word s-word dictonary lang)
+  (list-ref (car (search s-word dictonary) ) lang) ; first get the (list) out of ((list)) and then return the word in the language to translate to
+  )

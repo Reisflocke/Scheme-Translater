@@ -10,7 +10,7 @@
 
 (define (translate input-text)
   (send (send output-text-field get-editor) erase)  ; delete current text
-  (send (send output-text-field get-editor) insert input-text) 
+  (send (send output-text-field get-editor) insert (search input-text dict)) 
   )
 
 ; ========== GUI ==========
