@@ -1,5 +1,5 @@
 # Scheme-Translater
-My Scheme Translater Project and all it's bonus features
+My school Scheme Translater Project
 
 **Modules**
 
